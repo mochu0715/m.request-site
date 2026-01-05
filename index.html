@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>m.のリクエストBOX</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Abel&family=Abhaya+Libre:wght@400;500;600;700;800&family=Kosugi+Maru&family=M+PLUS+Rounded+1c&family=RocknRoll+One&family=Shippori+Mincho:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+
+</head>
+<body>
+
+  <div class="container">
+    <h1><img src="image/main.PNG" id="main" alt="もちゅのリクエストBOX" srcset="">
+
+    <p class="description">
+      みなさんの好きな活動者やキャラクターを教えてください！
+      Illustratorの練習も兼ねてゆっくり何かを作らせていただきます♡
+      <br>
+      <a class="prohibited">お急ぎのご依頼があればDMまで！</a>
+    </p>
+
+    <div class="note">
+      <h2>⚠ ご注意 ⚠</h2>
+      <ul>
+        <li>必ずしも全て作れるとは限りません</li>
+        <li>完成したイラストはSNSに掲載させていただきます</li>
+        <li>イラストは基本デフォルメになります</li>
+        <li>個人利用はリクエストしてくれたご本人のみOK(SNSアイコンも含む)</li>
+        <li class="prohibited">どんな理由があっても自作発言、AI学習、商用利用は不可です</li>
+      </ul>
+    </div>
+
+    <form action="https://docs.google.com/forms/d/e/1FAIpQLSeNHy8YyAMPHUYjqLS24SPLPB5uwn5wTEtXunoBwNLmD4pmqg/formResponse" method="post"
+      target="hidden_iframe" onsubmit="submitted=true;">
+    <iframe name="hidden_iframe" style="display:none;"></iframe>
+
+      <label>
+        お名前（任意）
+        <input type="text" name="entry.1241797864">
+      </label>
+
+      <label>
+        リクエスト内容<br>
+        <a class="example">例）〇〇さんイラスト、〇〇さんが着ぐるみ着てるイラスト、〇〇モチーフのXのアイコンを書いてほしい…等</a>
+        <textarea name="entry.1155536391" required></textarea>
+      </label>
+
+      <button type="submit">送信</button>
+    </form>
+
+    <div id="thanks" style="display:none;">
+        <img src="image/thanks.png" alt="リクエストありがとうございます！" class="thanks-img">
+        <p class="thanks-text">リクエストありがとうございます！<br>完成後、Xに掲載させていただきます。</p>
+    </div>
+
+    <footer>
+      <a href="https://twitter.com/otaku_mchu" target="_blank">
+        <img src="image/Xicon.png" id="Xicon" alt="Twitterはこちら" srcset="">
+      </a>
+
+      <p class="copy"><small>&copy;2026 m.／mochu</small></p>
+    </footer>
+  </div>
+
+  <script>
+  let submitted = false;
+
+  document.querySelector("form").addEventListener("submit", function () {
+    submitted = true;
+  });
+
+  document.querySelector("iframe").addEventListener("load", function () {
+    if (submitted) {
+      document.querySelector("form").style.display = "none";
+      document.getElementById("thanks").style.display = "block";
+    }
+  });
+  </script>
+
+</body>
+</html>
